@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Photos Page</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/sideBar.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #pho {
+            padding-left: 170px;
+        }
+    
+        img {
+            width: 500px;
+            height: 400px;
+            margin: 10px;
+            padding-left: 50px;
+            float: left;
+        }
+        body {
+            background-color: #191919;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vid" style="background-color: black;">
+        <nav>
+            <h2 class="logo">Perso<span>nal</span></h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About me.html">About Me</a></li>
+                <li><a href="Educational Websites.html">Educational Websites</a></li>
+                <li><a href="Videos.html">Vedios</a></li>
+                <li><a href="My_photos.html">Photos</a></li>
+            </ul>
+            <a href="https://www.youtube.com/c/AboFlah" class="btn">Subscribe</a>
+        </nav>
+    </div>
+    <div id="pho">
+        <img class="ved" src="img/Photots/it.png" >
+        <img class="ved" src="img/Photots/sea.png" >
+        <img class="ved" src="img/Photots/2300-1.jpg" >
+        <img class="ved" src="img/Photots/allah.jpg" >
+        <img class="ved" src="img/Photots/images (6).jpeg" >
+        <img class="ved" src="img/Photots/trees.png" >
+        <img class="ved" src="img/Photots/forest.png">
+        <img class="ved" src="img/Photots/images (5).jpeg">
+    </div>
+    <div class="sidebar">
+        <div class="logo-details">
+            <i class='bx bxl-c-plus-plus icon'></i>
+            <div class="logo_name">CodingLab</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class='bx bx-search'></i><a href="https://www.google.com/">
+                    <input type="text" placeholder="SearchInGoogle..."></a>
+                <span class="tooltip">Search</span>
+            </li>
+
+            <li>
+                <a href="medical.html">
+                    <i class='bx bx-plus-medical'></i>
+                    <span class="links_name">Medical Websites</span>
+                </a>
+                <span class="tooltip">Medical Websites</span>
+            </li>
+            <li>
+                <a href="religonal.html">
+                    <i class='bx bx-moon'></i>
+                    <span class="links_name">Islamic Websites</span>
+                </a>
+                <span class="tooltip">Islamic Websites</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Analytics</span>
+                </a>
+                <span class="tooltip">Analytics</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-folder'></i>
+                    <span class="links_name">File Manager</span>
+                </a>
+                <span class="tooltip">Files</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">Order</span>
+                </a>
+                <span class="tooltip">Order</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-heart'></i>
+                    <span class="links_name">Saved</span>
+                </a>
+                <span class="tooltip">Saved</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Setting</span>
+                </a>
+                <span class="tooltip">Setting</span>
+            </li>
+            <li class="profile">
+                <div class="profile-details">
+                    <div class="name_job">
+                        <div class="name">Osama Algumaei</div>
+                        <div class="job">Web designer</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out' id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+    <!---end of side bar-->
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();//calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+            }
+        }
+    </script>
+    <!------footer start--------->
+    <footer>
+        <p>Osama Abdu Ahmed Algumaei</p>
+        <p>For more HTML, CSS, and coding tutorial - please click on the link below to subscribe to my channel:</p>
+        <div class="social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+        </div>
+        <p class="end">CopyRight By Osama Abdu Ahmed Algumaei</p>
+    </footer>
+</body>
+
+</html>
